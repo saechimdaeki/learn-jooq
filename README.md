@@ -19,13 +19,19 @@ public void PreviewTest{
     void test() {
         Actor_ ACTOR = Actor_.ACTOR;
 
-        Condition lastNameLike = ACTOR.LAST_NAME.like("%ss%")
+        // Condition lastNameLike = ACTOR.LAST_NAME.like("%ss%")
 
         List<Actor> actors = dsl.selectFrom(ACTOR)
             .where(
-                lastNameLike
+                likeIfNotEmpty(ACTOR.LAST_NAME, "%ss%")
             )
             .fetchInto(Actor.class);
+    }
+
+    private Condition likeIfNotEmpty (TableField<? extends Record, String> tableField, String param) {
+        if (StringUtils.isEmpty(param))
+            return DSL.noCondition();
+        return tableField.like("%"+param+"%");
     }
 }
 ```

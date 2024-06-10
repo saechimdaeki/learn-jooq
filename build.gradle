@@ -1,0 +1,96 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+    id 'nu.studer.jooq' version '9.0'
+
+}
+
+group = 'me.saechimdaeki'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation ('org.springframework.boot:spring-boot-starter-jooq') {
+        exclude group: 'org.jooq:jooq'
+    }
+    implementation "org.jooq:jooq:3.19.5"
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    jooqGenerator 'com.mysql:mysql-connector-j'
+    jooqGenerator "org.jooq:jooq:3.19.5"
+    jooqGenerator "org.jooq:jooq-meta:3.19.5"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+String dbUser   = System.properties["db-user"]   ?: "root"
+String dbPasswd = System.properties["db-passwd"] ?: "passwd"
+
+jooq {
+    version = "3.19.5"
+    configurations {
+        sakilaDB {
+            generationTool {
+
+                jdbc {
+                    driver = 'com.mysql.cj.jdbc.Driver'
+                    url = 'jdbc:mysql://localhost:3306'
+                    user = "${dbUser}"
+                    password = "${dbPasswd}"
+                }
+
+
+                generator {
+                    name = 'org.jooq.codegen.DefaultGenerator'
+
+                    database {
+                        name = 'org.jooq.meta.mysql.MySQLDatabase'
+
+                        schemata {
+                            schema {
+                                inputSchema = 'sakila'
+                            }
+                        }
+                    }
+
+                    generate {
+                        daos = true
+                        records = true
+                        immutablePojos = true
+                        fluentSetters = true
+                        javaTimeTypes = true
+                        deprecated = false
+                    }
+
+                    target {
+                        directory = 'src/generated'
+                    }
+                }
+            }
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src/main/java", "src/generated"]
+        }
+    }
+}
+
