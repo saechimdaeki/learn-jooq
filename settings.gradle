@@ -1,1 +1,3 @@
-rootProject.name = 'demo'
+rootProject.name = 'jooq'
+include 'jOOQ-custom'
+

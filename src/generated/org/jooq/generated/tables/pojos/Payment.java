@@ -19,13 +19,15 @@ public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger paymentId;
-    private final UInteger customerId;
-    private final UInteger staffId;
-    private final Integer rentalId;
-    private final BigDecimal amount;
-    private final LocalDateTime paymentDate;
-    private final LocalDateTime lastUpdate;
+    private UInteger paymentId;
+    private UInteger customerId;
+    private UInteger staffId;
+    private Integer rentalId;
+    private BigDecimal amount;
+    private LocalDateTime paymentDate;
+    private LocalDateTime lastUpdate;
+
+    public Payment() {}
 
     public Payment(Payment value) {
         this.paymentId = value.paymentId;
@@ -63,10 +65,26 @@ public class Payment implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.payment.payment_id</code>.
+     */
+    public Payment setPaymentId(UInteger paymentId) {
+        this.paymentId = paymentId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.payment.customer_id</code>.
      */
     public UInteger getCustomerId() {
         return this.customerId;
+    }
+
+    /**
+     * Setter for <code>sakila.payment.customer_id</code>.
+     */
+    public Payment setCustomerId(UInteger customerId) {
+        this.customerId = customerId;
+        return this;
     }
 
     /**
@@ -77,10 +95,26 @@ public class Payment implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.payment.staff_id</code>.
+     */
+    public Payment setStaffId(UInteger staffId) {
+        this.staffId = staffId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.payment.rental_id</code>.
      */
     public Integer getRentalId() {
         return this.rentalId;
+    }
+
+    /**
+     * Setter for <code>sakila.payment.rental_id</code>.
+     */
+    public Payment setRentalId(Integer rentalId) {
+        this.rentalId = rentalId;
+        return this;
     }
 
     /**
@@ -91,6 +125,14 @@ public class Payment implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.payment.amount</code>.
+     */
+    public Payment setAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.payment.payment_date</code>.
      */
     public LocalDateTime getPaymentDate() {
@@ -98,10 +140,26 @@ public class Payment implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.payment.payment_date</code>.
+     */
+    public Payment setPaymentDate(LocalDateTime paymentDate) {
+        this.paymentDate = paymentDate;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.payment.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.payment.last_update</code>.
+     */
+    public Payment setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

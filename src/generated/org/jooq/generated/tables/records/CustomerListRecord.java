@@ -4,7 +4,8 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.CustomerList;
+import org.jooq.generated.tables.JCustomerList;
+import org.jooq.generated.tables.pojos.CustomerList;
 import org.jooq.impl.TableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -160,14 +161,14 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
      * Create a detached CustomerListRecord
      */
     public CustomerListRecord() {
-        super(CustomerList.CUSTOMER_LIST);
+        super(JCustomerList.CUSTOMER_LIST);
     }
 
     /**
      * Create a detached, initialised CustomerListRecord
      */
     public CustomerListRecord(UInteger id, String name, String address, String zipCode, String phone, String city, String country, String notes, UInteger sid) {
-        super(CustomerList.CUSTOMER_LIST);
+        super(JCustomerList.CUSTOMER_LIST);
 
         setId(id);
         setName(name);
@@ -184,8 +185,8 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
     /**
      * Create a detached, initialised CustomerListRecord
      */
-    public CustomerListRecord(org.jooq.generated.tables.pojos.CustomerList value) {
-        super(CustomerList.CUSTOMER_LIST);
+    public CustomerListRecord(CustomerList value) {
+        super(JCustomerList.CUSTOMER_LIST);
 
         if (value != null) {
             setId(value.getId());

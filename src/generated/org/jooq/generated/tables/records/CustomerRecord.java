@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Customer;
+import org.jooq.generated.tables.JCustomer;
+import org.jooq.generated.tables.pojos.Customer;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -172,14 +173,14 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
      * Create a detached CustomerRecord
      */
     public CustomerRecord() {
-        super(Customer.CUSTOMER);
+        super(JCustomer.CUSTOMER);
     }
 
     /**
      * Create a detached, initialised CustomerRecord
      */
     public CustomerRecord(UInteger customerId, UInteger storeId, String firstName, String lastName, String email, UInteger addressId, Byte active, LocalDateTime createDate, LocalDateTime lastUpdate) {
-        super(Customer.CUSTOMER);
+        super(JCustomer.CUSTOMER);
 
         setCustomerId(customerId);
         setStoreId(storeId);
@@ -196,8 +197,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Create a detached, initialised CustomerRecord
      */
-    public CustomerRecord(org.jooq.generated.tables.pojos.Customer value) {
-        super(Customer.CUSTOMER);
+    public CustomerRecord(Customer value) {
+        super(JCustomer.CUSTOMER);
 
         if (value != null) {
             setCustomerId(value.getCustomerId());

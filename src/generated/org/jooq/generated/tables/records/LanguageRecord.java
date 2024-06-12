@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Language;
+import org.jooq.generated.tables.JLanguage;
+import org.jooq.generated.tables.pojos.Language;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -82,14 +83,14 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
      * Create a detached LanguageRecord
      */
     public LanguageRecord() {
-        super(Language.LANGUAGE);
+        super(JLanguage.LANGUAGE);
     }
 
     /**
      * Create a detached, initialised LanguageRecord
      */
     public LanguageRecord(UInteger languageId, String name, LocalDateTime lastUpdate) {
-        super(Language.LANGUAGE);
+        super(JLanguage.LANGUAGE);
 
         setLanguageId(languageId);
         setName(name);
@@ -100,8 +101,8 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
     /**
      * Create a detached, initialised LanguageRecord
      */
-    public LanguageRecord(org.jooq.generated.tables.pojos.Language value) {
-        super(Language.LANGUAGE);
+    public LanguageRecord(Language value) {
+        super(JLanguage.LANGUAGE);
 
         if (value != null) {
             setLanguageId(value.getLanguageId());

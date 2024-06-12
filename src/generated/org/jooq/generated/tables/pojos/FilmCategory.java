@@ -18,9 +18,11 @@ public class FilmCategory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger filmId;
-    private final UInteger categoryId;
-    private final LocalDateTime lastUpdate;
+    private UInteger filmId;
+    private UInteger categoryId;
+    private LocalDateTime lastUpdate;
+
+    public FilmCategory() {}
 
     public FilmCategory(FilmCategory value) {
         this.filmId = value.filmId;
@@ -46,6 +48,14 @@ public class FilmCategory implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film_category.film_id</code>.
+     */
+    public FilmCategory setFilmId(UInteger filmId) {
+        this.filmId = filmId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film_category.category_id</code>.
      */
     public UInteger getCategoryId() {
@@ -53,10 +63,26 @@ public class FilmCategory implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film_category.category_id</code>.
+     */
+    public FilmCategory setCategoryId(UInteger categoryId) {
+        this.categoryId = categoryId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film_category.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.film_category.last_update</code>.
+     */
+    public FilmCategory setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

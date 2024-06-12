@@ -18,14 +18,16 @@ public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger addressId;
-    private final String address;
-    private final String address2;
-    private final String district;
-    private final UInteger cityId;
-    private final String postalCode;
-    private final String phone;
-    private final LocalDateTime lastUpdate;
+    private UInteger addressId;
+    private String address;
+    private String address2;
+    private String district;
+    private UInteger cityId;
+    private String postalCode;
+    private String phone;
+    private LocalDateTime lastUpdate;
+
+    public Address() {}
 
     public Address(Address value) {
         this.addressId = value.addressId;
@@ -66,10 +68,26 @@ public class Address implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.address.address_id</code>.
+     */
+    public Address setAddressId(UInteger addressId) {
+        this.addressId = addressId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.address.address</code>.
      */
     public String getAddress() {
         return this.address;
+    }
+
+    /**
+     * Setter for <code>sakila.address.address</code>.
+     */
+    public Address setAddress(String address) {
+        this.address = address;
+        return this;
     }
 
     /**
@@ -80,10 +98,26 @@ public class Address implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.address.address2</code>.
+     */
+    public Address setAddress2(String address2) {
+        this.address2 = address2;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.address.district</code>.
      */
     public String getDistrict() {
         return this.district;
+    }
+
+    /**
+     * Setter for <code>sakila.address.district</code>.
+     */
+    public Address setDistrict(String district) {
+        this.district = district;
+        return this;
     }
 
     /**
@@ -94,10 +128,26 @@ public class Address implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.address.city_id</code>.
+     */
+    public Address setCityId(UInteger cityId) {
+        this.cityId = cityId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.address.postal_code</code>.
      */
     public String getPostalCode() {
         return this.postalCode;
+    }
+
+    /**
+     * Setter for <code>sakila.address.postal_code</code>.
+     */
+    public Address setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+        return this;
     }
 
     /**
@@ -108,10 +158,26 @@ public class Address implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.address.phone</code>.
+     */
+    public Address setPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.address.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.address.last_update</code>.
+     */
+    public Address setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

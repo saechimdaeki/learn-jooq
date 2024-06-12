@@ -6,7 +6,8 @@ package org.jooq.generated.tables.records;
 
 import java.math.BigDecimal;
 
-import org.jooq.generated.tables.SalesByFilmCategory;
+import org.jooq.generated.tables.JSalesByFilmCategory;
+import org.jooq.generated.tables.pojos.SalesByFilmCategory;
 import org.jooq.impl.TableRecordImpl;
 
 
@@ -56,14 +57,14 @@ public class SalesByFilmCategoryRecord extends TableRecordImpl<SalesByFilmCatego
      * Create a detached SalesByFilmCategoryRecord
      */
     public SalesByFilmCategoryRecord() {
-        super(SalesByFilmCategory.SALES_BY_FILM_CATEGORY);
+        super(JSalesByFilmCategory.SALES_BY_FILM_CATEGORY);
     }
 
     /**
      * Create a detached, initialised SalesByFilmCategoryRecord
      */
     public SalesByFilmCategoryRecord(String category, BigDecimal totalSales) {
-        super(SalesByFilmCategory.SALES_BY_FILM_CATEGORY);
+        super(JSalesByFilmCategory.SALES_BY_FILM_CATEGORY);
 
         setCategory(category);
         setTotalSales(totalSales);
@@ -73,8 +74,8 @@ public class SalesByFilmCategoryRecord extends TableRecordImpl<SalesByFilmCatego
     /**
      * Create a detached, initialised SalesByFilmCategoryRecord
      */
-    public SalesByFilmCategoryRecord(org.jooq.generated.tables.pojos.SalesByFilmCategory value) {
-        super(SalesByFilmCategory.SALES_BY_FILM_CATEGORY);
+    public SalesByFilmCategoryRecord(SalesByFilmCategory value) {
+        super(JSalesByFilmCategory.SALES_BY_FILM_CATEGORY);
 
         if (value != null) {
             setCategory(value.getCategory());

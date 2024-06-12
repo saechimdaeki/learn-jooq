@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Rental;
+import org.jooq.generated.tables.JRental;
+import org.jooq.generated.tables.pojos.Rental;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -142,14 +143,14 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
      * Create a detached RentalRecord
      */
     public RentalRecord() {
-        super(Rental.RENTAL);
+        super(JRental.RENTAL);
     }
 
     /**
      * Create a detached, initialised RentalRecord
      */
     public RentalRecord(Integer rentalId, LocalDateTime rentalDate, UInteger inventoryId, UInteger customerId, LocalDateTime returnDate, UInteger staffId, LocalDateTime lastUpdate) {
-        super(Rental.RENTAL);
+        super(JRental.RENTAL);
 
         setRentalId(rentalId);
         setRentalDate(rentalDate);
@@ -164,8 +165,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Create a detached, initialised RentalRecord
      */
-    public RentalRecord(org.jooq.generated.tables.pojos.Rental value) {
-        super(Rental.RENTAL);
+    public RentalRecord(Rental value) {
+        super(JRental.RENTAL);
 
         if (value != null) {
             setRentalId(value.getRentalId());

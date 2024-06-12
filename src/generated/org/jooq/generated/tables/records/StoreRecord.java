@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Store;
+import org.jooq.generated.tables.JStore;
+import org.jooq.generated.tables.pojos.Store;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -97,14 +98,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
      * Create a detached StoreRecord
      */
     public StoreRecord() {
-        super(Store.STORE);
+        super(JStore.STORE);
     }
 
     /**
      * Create a detached, initialised StoreRecord
      */
     public StoreRecord(UInteger storeId, UInteger managerStaffId, UInteger addressId, LocalDateTime lastUpdate) {
-        super(Store.STORE);
+        super(JStore.STORE);
 
         setStoreId(storeId);
         setManagerStaffId(managerStaffId);
@@ -116,8 +117,8 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Create a detached, initialised StoreRecord
      */
-    public StoreRecord(org.jooq.generated.tables.pojos.Store value) {
-        super(Store.STORE);
+    public StoreRecord(Store value) {
+        super(JStore.STORE);
 
         if (value != null) {
             setStoreId(value.getStoreId());

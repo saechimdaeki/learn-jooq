@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Inventory;
+import org.jooq.generated.tables.JInventory;
+import org.jooq.generated.tables.pojos.Inventory;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -97,14 +98,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
      * Create a detached InventoryRecord
      */
     public InventoryRecord() {
-        super(Inventory.INVENTORY);
+        super(JInventory.INVENTORY);
     }
 
     /**
      * Create a detached, initialised InventoryRecord
      */
     public InventoryRecord(UInteger inventoryId, UInteger filmId, UInteger storeId, LocalDateTime lastUpdate) {
-        super(Inventory.INVENTORY);
+        super(JInventory.INVENTORY);
 
         setInventoryId(inventoryId);
         setFilmId(filmId);
@@ -116,8 +117,8 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Create a detached, initialised InventoryRecord
      */
-    public InventoryRecord(org.jooq.generated.tables.pojos.Inventory value) {
-        super(Inventory.INVENTORY);
+    public InventoryRecord(Inventory value) {
+        super(JInventory.INVENTORY);
 
         if (value != null) {
             setInventoryId(value.getInventoryId());

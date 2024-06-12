@@ -4,7 +4,8 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.ActorInfo;
+import org.jooq.generated.tables.JActorInfo;
+import org.jooq.generated.tables.pojos.ActorInfo;
 import org.jooq.impl.TableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -85,14 +86,14 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
      * Create a detached ActorInfoRecord
      */
     public ActorInfoRecord() {
-        super(ActorInfo.ACTOR_INFO);
+        super(JActorInfo.ACTOR_INFO);
     }
 
     /**
      * Create a detached, initialised ActorInfoRecord
      */
     public ActorInfoRecord(UInteger actorId, String firstName, String lastName, String filmInfo) {
-        super(ActorInfo.ACTOR_INFO);
+        super(JActorInfo.ACTOR_INFO);
 
         setActorId(actorId);
         setFirstName(firstName);
@@ -104,8 +105,8 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Create a detached, initialised ActorInfoRecord
      */
-    public ActorInfoRecord(org.jooq.generated.tables.pojos.ActorInfo value) {
-        super(ActorInfo.ACTOR_INFO);
+    public ActorInfoRecord(ActorInfo value) {
+        super(JActorInfo.ACTOR_INFO);
 
         if (value != null) {
             setActorId(value.getActorId());

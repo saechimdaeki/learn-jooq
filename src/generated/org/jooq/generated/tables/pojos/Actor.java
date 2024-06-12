@@ -18,10 +18,12 @@ public class Actor implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger actorId;
-    private final String firstName;
-    private final String lastName;
-    private final LocalDateTime lastUpdate;
+    private UInteger actorId;
+    private String firstName;
+    private String lastName;
+    private LocalDateTime lastUpdate;
+
+    public Actor() {}
 
     public Actor(Actor value) {
         this.actorId = value.actorId;
@@ -50,10 +52,26 @@ public class Actor implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.actor.actor_id</code>.
+     */
+    public Actor setActorId(UInteger actorId) {
+        this.actorId = actorId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.actor.first_name</code>.
      */
     public String getFirstName() {
         return this.firstName;
+    }
+
+    /**
+     * Setter for <code>sakila.actor.first_name</code>.
+     */
+    public Actor setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
     }
 
     /**
@@ -64,10 +82,26 @@ public class Actor implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.actor.last_name</code>.
+     */
+    public Actor setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.actor.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.actor.last_update</code>.
+     */
+    public Actor setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

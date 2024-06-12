@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Staff;
+import org.jooq.generated.tables.JStaff;
+import org.jooq.generated.tables.pojos.Staff;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -202,14 +203,14 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
      * Create a detached StaffRecord
      */
     public StaffRecord() {
-        super(Staff.STAFF);
+        super(JStaff.STAFF);
     }
 
     /**
      * Create a detached, initialised StaffRecord
      */
     public StaffRecord(UInteger staffId, String firstName, String lastName, UInteger addressId, byte[] picture, String email, UInteger storeId, Byte active, String username, String password, LocalDateTime lastUpdate) {
-        super(Staff.STAFF);
+        super(JStaff.STAFF);
 
         setStaffId(staffId);
         setFirstName(firstName);
@@ -228,8 +229,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Create a detached, initialised StaffRecord
      */
-    public StaffRecord(org.jooq.generated.tables.pojos.Staff value) {
-        super(Staff.STAFF);
+    public StaffRecord(Staff value) {
+        super(JStaff.STAFF);
 
         if (value != null) {
             setStaffId(value.getStaffId());

@@ -8,7 +8,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Payment;
+import org.jooq.generated.tables.JPayment;
+import org.jooq.generated.tables.pojos.Payment;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -143,14 +144,14 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
      * Create a detached PaymentRecord
      */
     public PaymentRecord() {
-        super(Payment.PAYMENT);
+        super(JPayment.PAYMENT);
     }
 
     /**
      * Create a detached, initialised PaymentRecord
      */
     public PaymentRecord(UInteger paymentId, UInteger customerId, UInteger staffId, Integer rentalId, BigDecimal amount, LocalDateTime paymentDate, LocalDateTime lastUpdate) {
-        super(Payment.PAYMENT);
+        super(JPayment.PAYMENT);
 
         setPaymentId(paymentId);
         setCustomerId(customerId);
@@ -165,8 +166,8 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Create a detached, initialised PaymentRecord
      */
-    public PaymentRecord(org.jooq.generated.tables.pojos.Payment value) {
-        super(Payment.PAYMENT);
+    public PaymentRecord(Payment value) {
+        super(JPayment.PAYMENT);
 
         if (value != null) {
             setPaymentId(value.getPaymentId());

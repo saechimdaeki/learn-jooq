@@ -18,13 +18,15 @@ public class Rental implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final Integer rentalId;
-    private final LocalDateTime rentalDate;
-    private final UInteger inventoryId;
-    private final UInteger customerId;
-    private final LocalDateTime returnDate;
-    private final UInteger staffId;
-    private final LocalDateTime lastUpdate;
+    private Integer rentalId;
+    private LocalDateTime rentalDate;
+    private UInteger inventoryId;
+    private UInteger customerId;
+    private LocalDateTime returnDate;
+    private UInteger staffId;
+    private LocalDateTime lastUpdate;
+
+    public Rental() {}
 
     public Rental(Rental value) {
         this.rentalId = value.rentalId;
@@ -62,10 +64,26 @@ public class Rental implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.rental.rental_id</code>.
+     */
+    public Rental setRentalId(Integer rentalId) {
+        this.rentalId = rentalId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.rental.rental_date</code>.
      */
     public LocalDateTime getRentalDate() {
         return this.rentalDate;
+    }
+
+    /**
+     * Setter for <code>sakila.rental.rental_date</code>.
+     */
+    public Rental setRentalDate(LocalDateTime rentalDate) {
+        this.rentalDate = rentalDate;
+        return this;
     }
 
     /**
@@ -76,10 +94,26 @@ public class Rental implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.rental.inventory_id</code>.
+     */
+    public Rental setInventoryId(UInteger inventoryId) {
+        this.inventoryId = inventoryId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.rental.customer_id</code>.
      */
     public UInteger getCustomerId() {
         return this.customerId;
+    }
+
+    /**
+     * Setter for <code>sakila.rental.customer_id</code>.
+     */
+    public Rental setCustomerId(UInteger customerId) {
+        this.customerId = customerId;
+        return this;
     }
 
     /**
@@ -90,6 +124,14 @@ public class Rental implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.rental.return_date</code>.
+     */
+    public Rental setReturnDate(LocalDateTime returnDate) {
+        this.returnDate = returnDate;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.rental.staff_id</code>.
      */
     public UInteger getStaffId() {
@@ -97,10 +139,26 @@ public class Rental implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.rental.staff_id</code>.
+     */
+    public Rental setStaffId(UInteger staffId) {
+        this.staffId = staffId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.rental.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.rental.last_update</code>.
+     */
+    public Rental setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

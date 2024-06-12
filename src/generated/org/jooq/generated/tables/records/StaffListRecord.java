@@ -4,7 +4,8 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.StaffList;
+import org.jooq.generated.tables.JStaffList;
+import org.jooq.generated.tables.pojos.StaffList;
 import org.jooq.impl.TableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -145,14 +146,14 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
      * Create a detached StaffListRecord
      */
     public StaffListRecord() {
-        super(StaffList.STAFF_LIST);
+        super(JStaffList.STAFF_LIST);
     }
 
     /**
      * Create a detached, initialised StaffListRecord
      */
     public StaffListRecord(UInteger id, String name, String address, String zipCode, String phone, String city, String country, UInteger sid) {
-        super(StaffList.STAFF_LIST);
+        super(JStaffList.STAFF_LIST);
 
         setId(id);
         setName(name);
@@ -168,8 +169,8 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Create a detached, initialised StaffListRecord
      */
-    public StaffListRecord(org.jooq.generated.tables.pojos.StaffList value) {
-        super(StaffList.STAFF_LIST);
+    public StaffListRecord(StaffList value) {
+        super(JStaffList.STAFF_LIST);
 
         if (value != null) {
             setId(value.getId());

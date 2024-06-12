@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.math.BigDecimal;
 
 import org.jooq.generated.enums.NicerButSlowerFilmListRating;
-import org.jooq.generated.tables.NicerButSlowerFilmList;
+import org.jooq.generated.tables.JNicerButSlowerFilmList;
+import org.jooq.generated.tables.pojos.NicerButSlowerFilmList;
 import org.jooq.impl.TableRecordImpl;
 import org.jooq.types.UInteger;
 import org.jooq.types.UShort;
@@ -149,14 +150,14 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
      * Create a detached NicerButSlowerFilmListRecord
      */
     public NicerButSlowerFilmListRecord() {
-        super(NicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
+        super(JNicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
     }
 
     /**
      * Create a detached, initialised NicerButSlowerFilmListRecord
      */
     public NicerButSlowerFilmListRecord(UInteger fid, String title, String description, String category, BigDecimal price, UShort length, NicerButSlowerFilmListRating rating, String actors) {
-        super(NicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
+        super(JNicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
 
         setFid(fid);
         setTitle(title);
@@ -172,8 +173,8 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Create a detached, initialised NicerButSlowerFilmListRecord
      */
-    public NicerButSlowerFilmListRecord(org.jooq.generated.tables.pojos.NicerButSlowerFilmList value) {
-        super(NicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
+    public NicerButSlowerFilmListRecord(NicerButSlowerFilmList value) {
+        super(JNicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
 
         if (value != null) {
             setFid(value.getFid());

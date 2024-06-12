@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Category;
+import org.jooq.generated.tables.JCategory;
+import org.jooq.generated.tables.pojos.Category;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -82,14 +83,14 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
      * Create a detached CategoryRecord
      */
     public CategoryRecord() {
-        super(Category.CATEGORY);
+        super(JCategory.CATEGORY);
     }
 
     /**
      * Create a detached, initialised CategoryRecord
      */
     public CategoryRecord(UInteger categoryId, String name, LocalDateTime lastUpdate) {
-        super(Category.CATEGORY);
+        super(JCategory.CATEGORY);
 
         setCategoryId(categoryId);
         setName(name);
@@ -100,8 +101,8 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
     /**
      * Create a detached, initialised CategoryRecord
      */
-    public CategoryRecord(org.jooq.generated.tables.pojos.Category value) {
-        super(Category.CATEGORY);
+    public CategoryRecord(Category value) {
+        super(JCategory.CATEGORY);
 
         if (value != null) {
             setCategoryId(value.getCategoryId());

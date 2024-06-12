@@ -23,19 +23,21 @@ public class Film implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger filmId;
-    private final String title;
-    private final String description;
-    private final Year releaseYear;
-    private final UInteger languageId;
-    private final UInteger originalLanguageId;
-    private final UByte rentalDuration;
-    private final BigDecimal rentalRate;
-    private final UShort length;
-    private final BigDecimal replacementCost;
-    private final FilmRating rating;
-    private final String specialFeatures;
-    private final LocalDateTime lastUpdate;
+    private UInteger filmId;
+    private String title;
+    private String description;
+    private Year releaseYear;
+    private UInteger languageId;
+    private UInteger originalLanguageId;
+    private UByte rentalDuration;
+    private BigDecimal rentalRate;
+    private UShort length;
+    private BigDecimal replacementCost;
+    private FilmRating rating;
+    private String specialFeatures;
+    private LocalDateTime lastUpdate;
+
+    public Film() {}
 
     public Film(Film value) {
         this.filmId = value.filmId;
@@ -91,10 +93,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.film_id</code>.
+     */
+    public Film setFilmId(UInteger filmId) {
+        this.filmId = filmId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.title</code>.
      */
     public String getTitle() {
         return this.title;
+    }
+
+    /**
+     * Setter for <code>sakila.film.title</code>.
+     */
+    public Film setTitle(String title) {
+        this.title = title;
+        return this;
     }
 
     /**
@@ -105,10 +123,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.description</code>.
+     */
+    public Film setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.release_year</code>.
      */
     public Year getReleaseYear() {
         return this.releaseYear;
+    }
+
+    /**
+     * Setter for <code>sakila.film.release_year</code>.
+     */
+    public Film setReleaseYear(Year releaseYear) {
+        this.releaseYear = releaseYear;
+        return this;
     }
 
     /**
@@ -119,10 +153,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.language_id</code>.
+     */
+    public Film setLanguageId(UInteger languageId) {
+        this.languageId = languageId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.original_language_id</code>.
      */
     public UInteger getOriginalLanguageId() {
         return this.originalLanguageId;
+    }
+
+    /**
+     * Setter for <code>sakila.film.original_language_id</code>.
+     */
+    public Film setOriginalLanguageId(UInteger originalLanguageId) {
+        this.originalLanguageId = originalLanguageId;
+        return this;
     }
 
     /**
@@ -133,10 +183,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.rental_duration</code>.
+     */
+    public Film setRentalDuration(UByte rentalDuration) {
+        this.rentalDuration = rentalDuration;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.rental_rate</code>.
      */
     public BigDecimal getRentalRate() {
         return this.rentalRate;
+    }
+
+    /**
+     * Setter for <code>sakila.film.rental_rate</code>.
+     */
+    public Film setRentalRate(BigDecimal rentalRate) {
+        this.rentalRate = rentalRate;
+        return this;
     }
 
     /**
@@ -147,10 +213,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.length</code>.
+     */
+    public Film setLength(UShort length) {
+        this.length = length;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.replacement_cost</code>.
      */
     public BigDecimal getReplacementCost() {
         return this.replacementCost;
+    }
+
+    /**
+     * Setter for <code>sakila.film.replacement_cost</code>.
+     */
+    public Film setReplacementCost(BigDecimal replacementCost) {
+        this.replacementCost = replacementCost;
+        return this;
     }
 
     /**
@@ -161,6 +243,14 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.rating</code>.
+     */
+    public Film setRating(FilmRating rating) {
+        this.rating = rating;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.special_features</code>.
      */
     public String getSpecialFeatures() {
@@ -168,10 +258,26 @@ public class Film implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.film.special_features</code>.
+     */
+    public Film setSpecialFeatures(String specialFeatures) {
+        this.specialFeatures = specialFeatures;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.film.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.film.last_update</code>.
+     */
+    public Film setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

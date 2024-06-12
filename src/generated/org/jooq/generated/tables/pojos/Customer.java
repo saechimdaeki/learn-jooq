@@ -18,15 +18,17 @@ public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private final UInteger customerId;
-    private final UInteger storeId;
-    private final String firstName;
-    private final String lastName;
-    private final String email;
-    private final UInteger addressId;
-    private final Byte active;
-    private final LocalDateTime createDate;
-    private final LocalDateTime lastUpdate;
+    private UInteger customerId;
+    private UInteger storeId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private UInteger addressId;
+    private Byte active;
+    private LocalDateTime createDate;
+    private LocalDateTime lastUpdate;
+
+    public Customer() {}
 
     public Customer(Customer value) {
         this.customerId = value.customerId;
@@ -70,10 +72,26 @@ public class Customer implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.customer.customer_id</code>.
+     */
+    public Customer setCustomerId(UInteger customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.customer.store_id</code>.
      */
     public UInteger getStoreId() {
         return this.storeId;
+    }
+
+    /**
+     * Setter for <code>sakila.customer.store_id</code>.
+     */
+    public Customer setStoreId(UInteger storeId) {
+        this.storeId = storeId;
+        return this;
     }
 
     /**
@@ -84,10 +102,26 @@ public class Customer implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.customer.first_name</code>.
+     */
+    public Customer setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.customer.last_name</code>.
      */
     public String getLastName() {
         return this.lastName;
+    }
+
+    /**
+     * Setter for <code>sakila.customer.last_name</code>.
+     */
+    public Customer setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
     }
 
     /**
@@ -98,10 +132,26 @@ public class Customer implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.customer.email</code>.
+     */
+    public Customer setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.customer.address_id</code>.
      */
     public UInteger getAddressId() {
         return this.addressId;
+    }
+
+    /**
+     * Setter for <code>sakila.customer.address_id</code>.
+     */
+    public Customer setAddressId(UInteger addressId) {
+        this.addressId = addressId;
+        return this;
     }
 
     /**
@@ -112,6 +162,14 @@ public class Customer implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.customer.active</code>.
+     */
+    public Customer setActive(Byte active) {
+        this.active = active;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.customer.create_date</code>.
      */
     public LocalDateTime getCreateDate() {
@@ -119,10 +177,26 @@ public class Customer implements Serializable {
     }
 
     /**
+     * Setter for <code>sakila.customer.create_date</code>.
+     */
+    public Customer setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+        return this;
+    }
+
+    /**
      * Getter for <code>sakila.customer.last_update</code>.
      */
     public LocalDateTime getLastUpdate() {
         return this.lastUpdate;
+    }
+
+    /**
+     * Setter for <code>sakila.customer.last_update</code>.
+     */
+    public Customer setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+        return this;
     }
 
     @Override

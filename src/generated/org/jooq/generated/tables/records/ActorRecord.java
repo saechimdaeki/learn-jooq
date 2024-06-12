@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Actor;
+import org.jooq.generated.tables.JActor;
+import org.jooq.generated.tables.pojos.Actor;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -97,14 +98,14 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
      * Create a detached ActorRecord
      */
     public ActorRecord() {
-        super(Actor.ACTOR);
+        super(JActor.ACTOR);
     }
 
     /**
      * Create a detached, initialised ActorRecord
      */
     public ActorRecord(UInteger actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
-        super(Actor.ACTOR);
+        super(JActor.ACTOR);
 
         setActorId(actorId);
         setFirstName(firstName);
@@ -116,8 +117,8 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Create a detached, initialised ActorRecord
      */
-    public ActorRecord(org.jooq.generated.tables.pojos.Actor value) {
-        super(Actor.ACTOR);
+    public ActorRecord(Actor value) {
+        super(JActor.ACTOR);
 
         if (value != null) {
             setActorId(value.getActorId());

@@ -10,7 +10,8 @@ import java.time.Year;
 
 import org.jooq.Record1;
 import org.jooq.generated.enums.FilmRating;
-import org.jooq.generated.tables.Film;
+import org.jooq.generated.tables.JFilm;
+import org.jooq.generated.tables.pojos.Film;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UByte;
 import org.jooq.types.UInteger;
@@ -237,14 +238,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
      * Create a detached FilmRecord
      */
     public FilmRecord() {
-        super(Film.FILM);
+        super(JFilm.FILM);
     }
 
     /**
      * Create a detached, initialised FilmRecord
      */
     public FilmRecord(UInteger filmId, String title, String description, Year releaseYear, UInteger languageId, UInteger originalLanguageId, UByte rentalDuration, BigDecimal rentalRate, UShort length, BigDecimal replacementCost, FilmRating rating, String specialFeatures, LocalDateTime lastUpdate) {
-        super(Film.FILM);
+        super(JFilm.FILM);
 
         setFilmId(filmId);
         setTitle(title);
@@ -265,8 +266,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Create a detached, initialised FilmRecord
      */
-    public FilmRecord(org.jooq.generated.tables.pojos.Film value) {
-        super(Film.FILM);
+    public FilmRecord(Film value) {
+        super(JFilm.FILM);
 
         if (value != null) {
             setFilmId(value.getFilmId());

@@ -6,18 +6,18 @@ package org.jooq.generated;
 
 import org.jooq.Index;
 import org.jooq.OrderField;
-import org.jooq.generated.tables.Actor;
-import org.jooq.generated.tables.Address;
-import org.jooq.generated.tables.City;
-import org.jooq.generated.tables.Customer;
-import org.jooq.generated.tables.Film;
-import org.jooq.generated.tables.FilmActor;
-import org.jooq.generated.tables.FilmText;
-import org.jooq.generated.tables.Inventory;
-import org.jooq.generated.tables.Payment;
-import org.jooq.generated.tables.Rental;
-import org.jooq.generated.tables.Staff;
-import org.jooq.generated.tables.Store;
+import org.jooq.generated.tables.JActor;
+import org.jooq.generated.tables.JAddress;
+import org.jooq.generated.tables.JCity;
+import org.jooq.generated.tables.JCustomer;
+import org.jooq.generated.tables.JFilm;
+import org.jooq.generated.tables.JFilmActor;
+import org.jooq.generated.tables.JFilmText;
+import org.jooq.generated.tables.JInventory;
+import org.jooq.generated.tables.JPayment;
+import org.jooq.generated.tables.JRental;
+import org.jooq.generated.tables.JStaff;
+import org.jooq.generated.tables.JStore;
 import org.jooq.impl.DSL;
 import org.jooq.impl.Internal;
 
@@ -32,25 +32,25 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
-    public static final Index ACTOR_IDX_ACTOR_LAST_NAME = Internal.createIndex(DSL.name("idx_actor_last_name"), Actor.ACTOR, new OrderField[] { Actor.ACTOR.LAST_NAME }, false);
-    public static final Index CUSTOMER_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), Customer.CUSTOMER, new OrderField[] { Customer.CUSTOMER.ADDRESS_ID }, false);
-    public static final Index STAFF_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), Staff.STAFF, new OrderField[] { Staff.STAFF.ADDRESS_ID }, false);
-    public static final Index STORE_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), Store.STORE, new OrderField[] { Store.STORE.ADDRESS_ID }, false);
-    public static final Index ADDRESS_IDX_FK_CITY_ID = Internal.createIndex(DSL.name("idx_fk_city_id"), Address.ADDRESS, new OrderField[] { Address.ADDRESS.CITY_ID }, false);
-    public static final Index CITY_IDX_FK_COUNTRY_ID = Internal.createIndex(DSL.name("idx_fk_country_id"), City.CITY, new OrderField[] { City.CITY.COUNTRY_ID }, false);
-    public static final Index PAYMENT_IDX_FK_CUSTOMER_ID = Internal.createIndex(DSL.name("idx_fk_customer_id"), Payment.PAYMENT, new OrderField[] { Payment.PAYMENT.CUSTOMER_ID }, false);
-    public static final Index RENTAL_IDX_FK_CUSTOMER_ID = Internal.createIndex(DSL.name("idx_fk_customer_id"), Rental.RENTAL, new OrderField[] { Rental.RENTAL.CUSTOMER_ID }, false);
-    public static final Index FILM_ACTOR_IDX_FK_FILM_ID = Internal.createIndex(DSL.name("idx_fk_film_id"), FilmActor.FILM_ACTOR, new OrderField[] { FilmActor.FILM_ACTOR.FILM_ID }, false);
-    public static final Index INVENTORY_IDX_FK_FILM_ID = Internal.createIndex(DSL.name("idx_fk_film_id"), Inventory.INVENTORY, new OrderField[] { Inventory.INVENTORY.FILM_ID }, false);
-    public static final Index RENTAL_IDX_FK_INVENTORY_ID = Internal.createIndex(DSL.name("idx_fk_inventory_id"), Rental.RENTAL, new OrderField[] { Rental.RENTAL.INVENTORY_ID }, false);
-    public static final Index FILM_IDX_FK_LANGUAGE_ID = Internal.createIndex(DSL.name("idx_fk_language_id"), Film.FILM, new OrderField[] { Film.FILM.LANGUAGE_ID }, false);
-    public static final Index FILM_IDX_FK_ORIGINAL_LANGUAGE_ID = Internal.createIndex(DSL.name("idx_fk_original_language_id"), Film.FILM, new OrderField[] { Film.FILM.ORIGINAL_LANGUAGE_ID }, false);
-    public static final Index PAYMENT_IDX_FK_STAFF_ID = Internal.createIndex(DSL.name("idx_fk_staff_id"), Payment.PAYMENT, new OrderField[] { Payment.PAYMENT.STAFF_ID }, false);
-    public static final Index RENTAL_IDX_FK_STAFF_ID = Internal.createIndex(DSL.name("idx_fk_staff_id"), Rental.RENTAL, new OrderField[] { Rental.RENTAL.STAFF_ID }, false);
-    public static final Index CUSTOMER_IDX_FK_STORE_ID = Internal.createIndex(DSL.name("idx_fk_store_id"), Customer.CUSTOMER, new OrderField[] { Customer.CUSTOMER.STORE_ID }, false);
-    public static final Index STAFF_IDX_FK_STORE_ID = Internal.createIndex(DSL.name("idx_fk_store_id"), Staff.STAFF, new OrderField[] { Staff.STAFF.STORE_ID }, false);
-    public static final Index CUSTOMER_IDX_LAST_NAME = Internal.createIndex(DSL.name("idx_last_name"), Customer.CUSTOMER, new OrderField[] { Customer.CUSTOMER.LAST_NAME }, false);
-    public static final Index INVENTORY_IDX_STORE_ID_FILM_ID = Internal.createIndex(DSL.name("idx_store_id_film_id"), Inventory.INVENTORY, new OrderField[] { Inventory.INVENTORY.STORE_ID, Inventory.INVENTORY.FILM_ID }, false);
-    public static final Index FILM_IDX_TITLE = Internal.createIndex(DSL.name("idx_title"), Film.FILM, new OrderField[] { Film.FILM.TITLE }, false);
-    public static final Index FILM_TEXT_IDX_TITLE_DESCRIPTION = Internal.createIndex(DSL.name("idx_title_description"), FilmText.FILM_TEXT, new OrderField[] { FilmText.FILM_TEXT.TITLE, FilmText.FILM_TEXT.DESCRIPTION }, false);
+    public static final Index ACTOR_IDX_ACTOR_LAST_NAME = Internal.createIndex(DSL.name("idx_actor_last_name"), JActor.ACTOR, new OrderField[] { JActor.ACTOR.LAST_NAME }, false);
+    public static final Index CUSTOMER_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), JCustomer.CUSTOMER, new OrderField[] { JCustomer.CUSTOMER.ADDRESS_ID }, false);
+    public static final Index STAFF_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), JStaff.STAFF, new OrderField[] { JStaff.STAFF.ADDRESS_ID }, false);
+    public static final Index STORE_IDX_FK_ADDRESS_ID = Internal.createIndex(DSL.name("idx_fk_address_id"), JStore.STORE, new OrderField[] { JStore.STORE.ADDRESS_ID }, false);
+    public static final Index ADDRESS_IDX_FK_CITY_ID = Internal.createIndex(DSL.name("idx_fk_city_id"), JAddress.ADDRESS, new OrderField[] { JAddress.ADDRESS.CITY_ID }, false);
+    public static final Index CITY_IDX_FK_COUNTRY_ID = Internal.createIndex(DSL.name("idx_fk_country_id"), JCity.CITY, new OrderField[] { JCity.CITY.COUNTRY_ID }, false);
+    public static final Index PAYMENT_IDX_FK_CUSTOMER_ID = Internal.createIndex(DSL.name("idx_fk_customer_id"), JPayment.PAYMENT, new OrderField[] { JPayment.PAYMENT.CUSTOMER_ID }, false);
+    public static final Index RENTAL_IDX_FK_CUSTOMER_ID = Internal.createIndex(DSL.name("idx_fk_customer_id"), JRental.RENTAL, new OrderField[] { JRental.RENTAL.CUSTOMER_ID }, false);
+    public static final Index FILM_ACTOR_IDX_FK_FILM_ID = Internal.createIndex(DSL.name("idx_fk_film_id"), JFilmActor.FILM_ACTOR, new OrderField[] { JFilmActor.FILM_ACTOR.FILM_ID }, false);
+    public static final Index INVENTORY_IDX_FK_FILM_ID = Internal.createIndex(DSL.name("idx_fk_film_id"), JInventory.INVENTORY, new OrderField[] { JInventory.INVENTORY.FILM_ID }, false);
+    public static final Index RENTAL_IDX_FK_INVENTORY_ID = Internal.createIndex(DSL.name("idx_fk_inventory_id"), JRental.RENTAL, new OrderField[] { JRental.RENTAL.INVENTORY_ID }, false);
+    public static final Index FILM_IDX_FK_LANGUAGE_ID = Internal.createIndex(DSL.name("idx_fk_language_id"), JFilm.FILM, new OrderField[] { JFilm.FILM.LANGUAGE_ID }, false);
+    public static final Index FILM_IDX_FK_ORIGINAL_LANGUAGE_ID = Internal.createIndex(DSL.name("idx_fk_original_language_id"), JFilm.FILM, new OrderField[] { JFilm.FILM.ORIGINAL_LANGUAGE_ID }, false);
+    public static final Index PAYMENT_IDX_FK_STAFF_ID = Internal.createIndex(DSL.name("idx_fk_staff_id"), JPayment.PAYMENT, new OrderField[] { JPayment.PAYMENT.STAFF_ID }, false);
+    public static final Index RENTAL_IDX_FK_STAFF_ID = Internal.createIndex(DSL.name("idx_fk_staff_id"), JRental.RENTAL, new OrderField[] { JRental.RENTAL.STAFF_ID }, false);
+    public static final Index CUSTOMER_IDX_FK_STORE_ID = Internal.createIndex(DSL.name("idx_fk_store_id"), JCustomer.CUSTOMER, new OrderField[] { JCustomer.CUSTOMER.STORE_ID }, false);
+    public static final Index STAFF_IDX_FK_STORE_ID = Internal.createIndex(DSL.name("idx_fk_store_id"), JStaff.STAFF, new OrderField[] { JStaff.STAFF.STORE_ID }, false);
+    public static final Index CUSTOMER_IDX_LAST_NAME = Internal.createIndex(DSL.name("idx_last_name"), JCustomer.CUSTOMER, new OrderField[] { JCustomer.CUSTOMER.LAST_NAME }, false);
+    public static final Index INVENTORY_IDX_STORE_ID_FILM_ID = Internal.createIndex(DSL.name("idx_store_id_film_id"), JInventory.INVENTORY, new OrderField[] { JInventory.INVENTORY.STORE_ID, JInventory.INVENTORY.FILM_ID }, false);
+    public static final Index FILM_IDX_TITLE = Internal.createIndex(DSL.name("idx_title"), JFilm.FILM, new OrderField[] { JFilm.FILM.TITLE }, false);
+    public static final Index FILM_TEXT_IDX_TITLE_DESCRIPTION = Internal.createIndex(DSL.name("idx_title_description"), JFilmText.FILM_TEXT, new OrderField[] { JFilmText.FILM_TEXT.TITLE, JFilmText.FILM_TEXT.DESCRIPTION }, false);
 }

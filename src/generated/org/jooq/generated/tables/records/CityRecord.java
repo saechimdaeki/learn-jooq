@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.City;
+import org.jooq.generated.tables.JCity;
+import org.jooq.generated.tables.pojos.City;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -97,14 +98,14 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
      * Create a detached CityRecord
      */
     public CityRecord() {
-        super(City.CITY);
+        super(JCity.CITY);
     }
 
     /**
      * Create a detached, initialised CityRecord
      */
     public CityRecord(UInteger cityId, String city, UInteger countryId, LocalDateTime lastUpdate) {
-        super(City.CITY);
+        super(JCity.CITY);
 
         setCityId(cityId);
         setCity(city);
@@ -116,8 +117,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Create a detached, initialised CityRecord
      */
-    public CityRecord(org.jooq.generated.tables.pojos.City value) {
-        super(City.CITY);
+    public CityRecord(City value) {
+        super(JCity.CITY);
 
         if (value != null) {
             setCityId(value.getCityId());

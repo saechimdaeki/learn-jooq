@@ -7,7 +7,8 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Country;
+import org.jooq.generated.tables.JCountry;
+import org.jooq.generated.tables.pojos.Country;
 import org.jooq.impl.UpdatableRecordImpl;
 import org.jooq.types.UInteger;
 
@@ -82,14 +83,14 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
      * Create a detached CountryRecord
      */
     public CountryRecord() {
-        super(Country.COUNTRY);
+        super(JCountry.COUNTRY);
     }
 
     /**
      * Create a detached, initialised CountryRecord
      */
     public CountryRecord(UInteger countryId, String country, LocalDateTime lastUpdate) {
-        super(Country.COUNTRY);
+        super(JCountry.COUNTRY);
 
         setCountryId(countryId);
         setCountry(country);
@@ -100,8 +101,8 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Create a detached, initialised CountryRecord
      */
-    public CountryRecord(org.jooq.generated.tables.pojos.Country value) {
-        super(Country.COUNTRY);
+    public CountryRecord(Country value) {
+        super(JCountry.COUNTRY);
 
         if (value != null) {
             setCountryId(value.getCountryId());
