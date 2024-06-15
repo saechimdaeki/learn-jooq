@@ -36,6 +36,7 @@ import org.jooq.generated.tables.JPayment.PaymentPath;
 import org.jooq.generated.tables.JRental.RentalPath;
 import org.jooq.generated.tables.JStore.StorePath;
 import org.jooq.generated.tables.records.CustomerRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -66,12 +67,12 @@ public class JCustomer extends TableImpl<CustomerRecord> {
     /**
      * The column <code>sakila.customer.customer_id</code>.
      */
-    public final TableField<CustomerRecord, UInteger> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<CustomerRecord, Long> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.customer.store_id</code>.
      */
-    public final TableField<CustomerRecord, UInteger> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<CustomerRecord, Long> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.customer.first_name</code>.
@@ -91,7 +92,7 @@ public class JCustomer extends TableImpl<CustomerRecord> {
     /**
      * The column <code>sakila.customer.address_id</code>.
      */
-    public final TableField<CustomerRecord, UInteger> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<CustomerRecord, Long> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.customer.active</code>.
@@ -181,8 +182,8 @@ public class JCustomer extends TableImpl<CustomerRecord> {
     }
 
     @Override
-    public Identity<CustomerRecord, UInteger> getIdentity() {
-        return (Identity<CustomerRecord, UInteger>) super.getIdentity();
+    public Identity<CustomerRecord, Long> getIdentity() {
+        return (Identity<CustomerRecord, Long>) super.getIdentity();
     }
 
     @Override

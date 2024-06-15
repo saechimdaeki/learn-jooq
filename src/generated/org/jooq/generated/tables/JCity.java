@@ -34,6 +34,7 @@ import org.jooq.generated.Keys;
 import org.jooq.generated.tables.JAddress.AddressPath;
 import org.jooq.generated.tables.JCountry.CountryPath;
 import org.jooq.generated.tables.records.CityRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -64,7 +65,7 @@ public class JCity extends TableImpl<CityRecord> {
     /**
      * The column <code>sakila.city.city_id</code>.
      */
-    public final TableField<CityRecord, UInteger> CITY_ID = createField(DSL.name("city_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<CityRecord, Long> CITY_ID = createField(DSL.name("city_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.city.city</code>.
@@ -74,7 +75,7 @@ public class JCity extends TableImpl<CityRecord> {
     /**
      * The column <code>sakila.city.country_id</code>.
      */
-    public final TableField<CityRecord, UInteger> COUNTRY_ID = createField(DSL.name("country_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<CityRecord, Long> COUNTRY_ID = createField(DSL.name("country_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.city.last_update</code>.
@@ -154,8 +155,8 @@ public class JCity extends TableImpl<CityRecord> {
     }
 
     @Override
-    public Identity<CityRecord, UInteger> getIdentity() {
-        return (Identity<CityRecord, UInteger>) super.getIdentity();
+    public Identity<CityRecord, Long> getIdentity() {
+        return (Identity<CityRecord, Long>) super.getIdentity();
     }
 
     @Override

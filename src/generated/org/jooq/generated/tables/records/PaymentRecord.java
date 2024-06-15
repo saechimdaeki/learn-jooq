@@ -11,7 +11,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JPayment;
 import org.jooq.generated.tables.pojos.Payment;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -25,7 +24,7 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Setter for <code>sakila.payment.payment_id</code>.
      */
-    public PaymentRecord setPaymentId(UInteger value) {
+    public PaymentRecord setPaymentId(Long value) {
         set(0, value);
         return this;
     }
@@ -33,14 +32,14 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Getter for <code>sakila.payment.payment_id</code>.
      */
-    public UInteger getPaymentId() {
-        return (UInteger) get(0);
+    public Long getPaymentId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.payment.customer_id</code>.
      */
-    public PaymentRecord setCustomerId(UInteger value) {
+    public PaymentRecord setCustomerId(Long value) {
         set(1, value);
         return this;
     }
@@ -48,14 +47,14 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Getter for <code>sakila.payment.customer_id</code>.
      */
-    public UInteger getCustomerId() {
-        return (UInteger) get(1);
+    public Long getCustomerId() {
+        return (Long) get(1);
     }
 
     /**
      * Setter for <code>sakila.payment.staff_id</code>.
      */
-    public PaymentRecord setStaffId(UInteger value) {
+    public PaymentRecord setStaffId(Long value) {
         set(2, value);
         return this;
     }
@@ -63,8 +62,8 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Getter for <code>sakila.payment.staff_id</code>.
      */
-    public UInteger getStaffId() {
-        return (UInteger) get(2);
+    public Long getStaffId() {
+        return (Long) get(2);
     }
 
     /**
@@ -132,7 +131,7 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -150,7 +149,7 @@ public class PaymentRecord extends UpdatableRecordImpl<PaymentRecord> {
     /**
      * Create a detached, initialised PaymentRecord
      */
-    public PaymentRecord(UInteger paymentId, UInteger customerId, UInteger staffId, Integer rentalId, BigDecimal amount, LocalDateTime paymentDate, LocalDateTime lastUpdate) {
+    public PaymentRecord(Long paymentId, Long customerId, Long staffId, Integer rentalId, BigDecimal amount, LocalDateTime paymentDate, LocalDateTime lastUpdate) {
         super(JPayment.PAYMENT);
 
         setPaymentId(paymentId);

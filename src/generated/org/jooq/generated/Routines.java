@@ -15,6 +15,7 @@ import org.jooq.generated.routines.JGetCustomerBalance;
 import org.jooq.generated.routines.JInventoryHeldByCustomer;
 import org.jooq.generated.routines.JInventoryInStock;
 import org.jooq.generated.routines.JRewardsReport;
+import org.jooq.impl.AutoConverter;
 import org.jooq.types.UByte;
 
 
@@ -181,7 +182,7 @@ public class Routines {
      */
     public static Integer rewardsReport(
           Configuration configuration
-        , UByte minMonthlyPurchases
+        , Integer minMonthlyPurchases
         , BigDecimal minDollarAmountPurchased
     ) {
         JRewardsReport p = new JRewardsReport();

@@ -36,6 +36,7 @@ import org.jooq.generated.tables.JCustomer.CustomerPath;
 import org.jooq.generated.tables.JInventory.InventoryPath;
 import org.jooq.generated.tables.JStaff.StaffPath;
 import org.jooq.generated.tables.records.StoreRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -66,17 +67,17 @@ public class JStore extends TableImpl<StoreRecord> {
     /**
      * The column <code>sakila.store.store_id</code>.
      */
-    public final TableField<StoreRecord, UInteger> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<StoreRecord, Long> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.store.manager_staff_id</code>.
      */
-    public final TableField<StoreRecord, UInteger> MANAGER_STAFF_ID = createField(DSL.name("manager_staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<StoreRecord, Long> MANAGER_STAFF_ID = createField(DSL.name("manager_staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.store.address_id</code>.
      */
-    public final TableField<StoreRecord, UInteger> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<StoreRecord, Long> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.store.last_update</code>.
@@ -156,8 +157,8 @@ public class JStore extends TableImpl<StoreRecord> {
     }
 
     @Override
-    public Identity<StoreRecord, UInteger> getIdentity() {
-        return (Identity<StoreRecord, UInteger>) super.getIdentity();
+    public Identity<StoreRecord, Long> getIdentity() {
+        return (Identity<StoreRecord, Long>) super.getIdentity();
     }
 
     @Override

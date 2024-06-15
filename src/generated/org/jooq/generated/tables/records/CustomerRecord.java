@@ -10,7 +10,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JCustomer;
 import org.jooq.generated.tables.pojos.Customer;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -24,7 +23,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Setter for <code>sakila.customer.customer_id</code>.
      */
-    public CustomerRecord setCustomerId(UInteger value) {
+    public CustomerRecord setCustomerId(Long value) {
         set(0, value);
         return this;
     }
@@ -32,14 +31,14 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.customer_id</code>.
      */
-    public UInteger getCustomerId() {
-        return (UInteger) get(0);
+    public Long getCustomerId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.customer.store_id</code>.
      */
-    public CustomerRecord setStoreId(UInteger value) {
+    public CustomerRecord setStoreId(Long value) {
         set(1, value);
         return this;
     }
@@ -47,8 +46,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.store_id</code>.
      */
-    public UInteger getStoreId() {
-        return (UInteger) get(1);
+    public Long getStoreId() {
+        return (Long) get(1);
     }
 
     /**
@@ -99,7 +98,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Setter for <code>sakila.customer.address_id</code>.
      */
-    public CustomerRecord setAddressId(UInteger value) {
+    public CustomerRecord setAddressId(Long value) {
         set(5, value);
         return this;
     }
@@ -107,8 +106,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.address_id</code>.
      */
-    public UInteger getAddressId() {
-        return (UInteger) get(5);
+    public Long getAddressId() {
+        return (Long) get(5);
     }
 
     /**
@@ -161,7 +160,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -179,7 +178,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Create a detached, initialised CustomerRecord
      */
-    public CustomerRecord(UInteger customerId, UInteger storeId, String firstName, String lastName, String email, UInteger addressId, Byte active, LocalDateTime createDate, LocalDateTime lastUpdate) {
+    public CustomerRecord(Long customerId, Long storeId, String firstName, String lastName, String email, Long addressId, Byte active, LocalDateTime createDate, LocalDateTime lastUpdate) {
         super(JCustomer.CUSTOMER);
 
         setCustomerId(customerId);

@@ -36,6 +36,7 @@ import org.jooq.generated.tables.JPayment.PaymentPath;
 import org.jooq.generated.tables.JRental.RentalPath;
 import org.jooq.generated.tables.JStore.StorePath;
 import org.jooq.generated.tables.records.StaffRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -66,7 +67,7 @@ public class JStaff extends TableImpl<StaffRecord> {
     /**
      * The column <code>sakila.staff.staff_id</code>.
      */
-    public final TableField<StaffRecord, UInteger> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<StaffRecord, Long> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.staff.first_name</code>.
@@ -81,7 +82,7 @@ public class JStaff extends TableImpl<StaffRecord> {
     /**
      * The column <code>sakila.staff.address_id</code>.
      */
-    public final TableField<StaffRecord, UInteger> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<StaffRecord, Long> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.staff.picture</code>.
@@ -96,7 +97,7 @@ public class JStaff extends TableImpl<StaffRecord> {
     /**
      * The column <code>sakila.staff.store_id</code>.
      */
-    public final TableField<StaffRecord, UInteger> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<StaffRecord, Long> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.staff.active</code>.
@@ -191,8 +192,8 @@ public class JStaff extends TableImpl<StaffRecord> {
     }
 
     @Override
-    public Identity<StaffRecord, UInteger> getIdentity() {
-        return (Identity<StaffRecord, UInteger>) super.getIdentity();
+    public Identity<StaffRecord, Long> getIdentity() {
+        return (Identity<StaffRecord, Long>) super.getIdentity();
     }
 
     @Override

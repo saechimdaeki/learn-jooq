@@ -10,7 +10,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JRental;
 import org.jooq.generated.tables.pojos.Rental;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -54,7 +53,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.inventory_id</code>.
      */
-    public RentalRecord setInventoryId(UInteger value) {
+    public RentalRecord setInventoryId(Long value) {
         set(2, value);
         return this;
     }
@@ -62,14 +61,14 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.inventory_id</code>.
      */
-    public UInteger getInventoryId() {
-        return (UInteger) get(2);
+    public Long getInventoryId() {
+        return (Long) get(2);
     }
 
     /**
      * Setter for <code>sakila.rental.customer_id</code>.
      */
-    public RentalRecord setCustomerId(UInteger value) {
+    public RentalRecord setCustomerId(Long value) {
         set(3, value);
         return this;
     }
@@ -77,8 +76,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.customer_id</code>.
      */
-    public UInteger getCustomerId() {
-        return (UInteger) get(3);
+    public Long getCustomerId() {
+        return (Long) get(3);
     }
 
     /**
@@ -99,7 +98,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.staff_id</code>.
      */
-    public RentalRecord setStaffId(UInteger value) {
+    public RentalRecord setStaffId(Long value) {
         set(5, value);
         return this;
     }
@@ -107,8 +106,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.staff_id</code>.
      */
-    public UInteger getStaffId() {
-        return (UInteger) get(5);
+    public Long getStaffId() {
+        return (Long) get(5);
     }
 
     /**
@@ -149,7 +148,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Create a detached, initialised RentalRecord
      */
-    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, UInteger inventoryId, UInteger customerId, LocalDateTime returnDate, UInteger staffId, LocalDateTime lastUpdate) {
+    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, Long inventoryId, Long customerId, LocalDateTime returnDate, Long staffId, LocalDateTime lastUpdate) {
         super(JRental.RENTAL);
 
         setRentalId(rentalId);

@@ -10,7 +10,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JStaff;
 import org.jooq.generated.tables.pojos.Staff;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -24,7 +23,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.staff_id</code>.
      */
-    public StaffRecord setStaffId(UInteger value) {
+    public StaffRecord setStaffId(Long value) {
         set(0, value);
         return this;
     }
@@ -32,8 +31,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.staff_id</code>.
      */
-    public UInteger getStaffId() {
-        return (UInteger) get(0);
+    public Long getStaffId() {
+        return (Long) get(0);
     }
 
     /**
@@ -69,7 +68,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.address_id</code>.
      */
-    public StaffRecord setAddressId(UInteger value) {
+    public StaffRecord setAddressId(Long value) {
         set(3, value);
         return this;
     }
@@ -77,8 +76,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.address_id</code>.
      */
-    public UInteger getAddressId() {
-        return (UInteger) get(3);
+    public Long getAddressId() {
+        return (Long) get(3);
     }
 
     /**
@@ -114,7 +113,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.store_id</code>.
      */
-    public StaffRecord setStoreId(UInteger value) {
+    public StaffRecord setStoreId(Long value) {
         set(6, value);
         return this;
     }
@@ -122,8 +121,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.store_id</code>.
      */
-    public UInteger getStoreId() {
-        return (UInteger) get(6);
+    public Long getStoreId() {
+        return (Long) get(6);
     }
 
     /**
@@ -191,7 +190,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -209,7 +208,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Create a detached, initialised StaffRecord
      */
-    public StaffRecord(UInteger staffId, String firstName, String lastName, UInteger addressId, byte[] picture, String email, UInteger storeId, Byte active, String username, String password, LocalDateTime lastUpdate) {
+    public StaffRecord(Long staffId, String firstName, String lastName, Long addressId, byte[] picture, String email, Long storeId, Byte active, String username, String password, LocalDateTime lastUpdate) {
         super(JStaff.STAFF);
 
         setStaffId(staffId);

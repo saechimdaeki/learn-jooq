@@ -6,8 +6,6 @@ package org.jooq.generated.tables.pojos;
 
 import java.io.Serializable;
 
-import org.jooq.types.UInteger;
-
 
 /**
  * VIEW
@@ -17,14 +15,14 @@ public class StaffList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private UInteger id;
+    private Long id;
     private String name;
     private String address;
     private String zipCode;
     private String phone;
     private String city;
     private String country;
-    private UInteger sid;
+    private Long sid;
 
     public StaffList() {}
 
@@ -40,14 +38,14 @@ public class StaffList implements Serializable {
     }
 
     public StaffList(
-        UInteger id,
+        Long id,
         String name,
         String address,
         String zipCode,
         String phone,
         String city,
         String country,
-        UInteger sid
+        Long sid
     ) {
         this.id = id;
         this.name = name;
@@ -62,14 +60,14 @@ public class StaffList implements Serializable {
     /**
      * Getter for <code>sakila.staff_list.ID</code>.
      */
-    public UInteger getId() {
+    public Long getId() {
         return this.id;
     }
 
     /**
      * Setter for <code>sakila.staff_list.ID</code>.
      */
-    public StaffList setId(UInteger id) {
+    public StaffList setId(Long id) {
         this.id = id;
         return this;
     }
@@ -167,14 +165,14 @@ public class StaffList implements Serializable {
     /**
      * Getter for <code>sakila.staff_list.SID</code>.
      */
-    public UInteger getSid() {
+    public Long getSid() {
         return this.sid;
     }
 
     /**
      * Setter for <code>sakila.staff_list.SID</code>.
      */
-    public StaffList setSid(UInteger sid) {
+    public StaffList setSid(Long sid) {
         this.sid = sid;
         return this;
     }

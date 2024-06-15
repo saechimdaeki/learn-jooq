@@ -31,6 +31,7 @@ import org.jooq.generated.Keys;
 import org.jooq.generated.tables.JCategory.CategoryPath;
 import org.jooq.generated.tables.JFilm.FilmPath;
 import org.jooq.generated.tables.records.FilmCategoryRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -61,12 +62,12 @@ public class JFilmCategory extends TableImpl<FilmCategoryRecord> {
     /**
      * The column <code>sakila.film_category.film_id</code>.
      */
-    public final TableField<FilmCategoryRecord, UInteger> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<FilmCategoryRecord, Long> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.film_category.category_id</code>.
      */
-    public final TableField<FilmCategoryRecord, UInteger> CATEGORY_ID = createField(DSL.name("category_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<FilmCategoryRecord, Long> CATEGORY_ID = createField(DSL.name("category_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.film_category.last_update</code>.

@@ -20,6 +20,7 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.StaffListRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -50,7 +51,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
     /**
      * The column <code>sakila.staff_list.ID</code>.
      */
-    public final TableField<StaffListRecord, UInteger> ID = createField(DSL.name("ID"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<StaffListRecord, Long> ID = createField(DSL.name("ID"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.staff_list.name</code>.
@@ -85,7 +86,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
     /**
      * The column <code>sakila.staff_list.SID</code>.
      */
-    public final TableField<StaffListRecord, UInteger> SID = createField(DSL.name("SID"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<StaffListRecord, Long> SID = createField(DSL.name("SID"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     private JStaffList(Name alias, Table<StaffListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);

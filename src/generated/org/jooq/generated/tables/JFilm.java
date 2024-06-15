@@ -41,6 +41,7 @@ import org.jooq.generated.tables.JFilmCategory.FilmCategoryPath;
 import org.jooq.generated.tables.JInventory.InventoryPath;
 import org.jooq.generated.tables.JLanguage.LanguagePath;
 import org.jooq.generated.tables.records.FilmRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -73,7 +74,7 @@ public class JFilm extends TableImpl<FilmRecord> {
     /**
      * The column <code>sakila.film.film_id</code>.
      */
-    public final TableField<FilmRecord, UInteger> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<FilmRecord, Long> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.film.title</code>.
@@ -93,17 +94,17 @@ public class JFilm extends TableImpl<FilmRecord> {
     /**
      * The column <code>sakila.film.language_id</code>.
      */
-    public final TableField<FilmRecord, UInteger> LANGUAGE_ID = createField(DSL.name("language_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<FilmRecord, Long> LANGUAGE_ID = createField(DSL.name("language_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.film.original_language_id</code>.
      */
-    public final TableField<FilmRecord, UInteger> ORIGINAL_LANGUAGE_ID = createField(DSL.name("original_language_id"), SQLDataType.INTEGERUNSIGNED, this, "");
+    public final TableField<FilmRecord, Long> ORIGINAL_LANGUAGE_ID = createField(DSL.name("original_language_id"), SQLDataType.INTEGERUNSIGNED, this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.film.rental_duration</code>.
      */
-    public final TableField<FilmRecord, UByte> RENTAL_DURATION = createField(DSL.name("rental_duration"), SQLDataType.TINYINTUNSIGNED.nullable(false).defaultValue(DSL.inline("3", SQLDataType.TINYINTUNSIGNED)), this, "");
+    public final TableField<FilmRecord, Integer> RENTAL_DURATION = createField(DSL.name("rental_duration"), SQLDataType.TINYINTUNSIGNED.nullable(false).defaultValue(DSL.inline("3", SQLDataType.TINYINTUNSIGNED)), this, "", new AutoConverter<UByte, Integer>(UByte.class, Integer.class));
 
     /**
      * The column <code>sakila.film.rental_rate</code>.
@@ -113,7 +114,7 @@ public class JFilm extends TableImpl<FilmRecord> {
     /**
      * The column <code>sakila.film.length</code>.
      */
-    public final TableField<FilmRecord, UShort> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "");
+    public final TableField<FilmRecord, Integer> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "", new AutoConverter<UShort, Integer>(UShort.class, Integer.class));
 
     /**
      * The column <code>sakila.film.replacement_cost</code>.
@@ -208,8 +209,8 @@ public class JFilm extends TableImpl<FilmRecord> {
     }
 
     @Override
-    public Identity<FilmRecord, UInteger> getIdentity() {
-        return (Identity<FilmRecord, UInteger>) super.getIdentity();
+    public Identity<FilmRecord, Long> getIdentity() {
+        return (Identity<FilmRecord, Long>) super.getIdentity();
     }
 
     @Override

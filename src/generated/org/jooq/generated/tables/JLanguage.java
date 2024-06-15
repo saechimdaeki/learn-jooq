@@ -29,6 +29,7 @@ import org.jooq.generated.JSakila;
 import org.jooq.generated.Keys;
 import org.jooq.generated.tables.JFilm.FilmPath;
 import org.jooq.generated.tables.records.LanguageRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -59,7 +60,7 @@ public class JLanguage extends TableImpl<LanguageRecord> {
     /**
      * The column <code>sakila.language.language_id</code>.
      */
-    public final TableField<LanguageRecord, UInteger> LANGUAGE_ID = createField(DSL.name("language_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<LanguageRecord, Long> LANGUAGE_ID = createField(DSL.name("language_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.language.name</code>.
@@ -139,8 +140,8 @@ public class JLanguage extends TableImpl<LanguageRecord> {
     }
 
     @Override
-    public Identity<LanguageRecord, UInteger> getIdentity() {
-        return (Identity<LanguageRecord, UInteger>) super.getIdentity();
+    public Identity<LanguageRecord, Long> getIdentity() {
+        return (Identity<LanguageRecord, Long>) super.getIdentity();
     }
 
     @Override

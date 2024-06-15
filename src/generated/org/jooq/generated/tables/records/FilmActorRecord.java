@@ -10,7 +10,6 @@ import org.jooq.Record2;
 import org.jooq.generated.tables.JFilmActor;
 import org.jooq.generated.tables.pojos.FilmActor;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -24,7 +23,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Setter for <code>sakila.film_actor.actor_id</code>.
      */
-    public FilmActorRecord setActorId(UInteger value) {
+    public FilmActorRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -32,14 +31,14 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.actor_id</code>.
      */
-    public UInteger getActorId() {
-        return (UInteger) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.film_actor.film_id</code>.
      */
-    public FilmActorRecord setFilmId(UInteger value) {
+    public FilmActorRecord setFilmId(Long value) {
         set(1, value);
         return this;
     }
@@ -47,8 +46,8 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.film_id</code>.
      */
-    public UInteger getFilmId() {
-        return (UInteger) get(1);
+    public Long getFilmId() {
+        return (Long) get(1);
     }
 
     /**
@@ -71,7 +70,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record2<UInteger, UInteger> key() {
+    public Record2<Long, Long> key() {
         return (Record2) super.key();
     }
 
@@ -89,7 +88,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Create a detached, initialised FilmActorRecord
      */
-    public FilmActorRecord(UInteger actorId, UInteger filmId, LocalDateTime lastUpdate) {
+    public FilmActorRecord(Long actorId, Long filmId, LocalDateTime lastUpdate) {
         super(JFilmActor.FILM_ACTOR);
 
         setActorId(actorId);

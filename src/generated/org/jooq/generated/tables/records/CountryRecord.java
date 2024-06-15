@@ -10,7 +10,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JCountry;
 import org.jooq.generated.tables.pojos.Country;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -24,7 +23,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Setter for <code>sakila.country.country_id</code>.
      */
-    public CountryRecord setCountryId(UInteger value) {
+    public CountryRecord setCountryId(Long value) {
         set(0, value);
         return this;
     }
@@ -32,8 +31,8 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Getter for <code>sakila.country.country_id</code>.
      */
-    public UInteger getCountryId() {
-        return (UInteger) get(0);
+    public Long getCountryId() {
+        return (Long) get(0);
     }
 
     /**
@@ -71,7 +70,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -89,7 +88,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Create a detached, initialised CountryRecord
      */
-    public CountryRecord(UInteger countryId, String country, LocalDateTime lastUpdate) {
+    public CountryRecord(Long countryId, String country, LocalDateTime lastUpdate) {
         super(JCountry.COUNTRY);
 
         setCountryId(countryId);

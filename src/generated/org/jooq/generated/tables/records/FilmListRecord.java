@@ -10,8 +10,6 @@ import org.jooq.generated.enums.FilmListRating;
 import org.jooq.generated.tables.JFilmList;
 import org.jooq.generated.tables.pojos.FilmList;
 import org.jooq.impl.TableRecordImpl;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
@@ -25,7 +23,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.FID</code>.
      */
-    public FilmListRecord setFid(UInteger value) {
+    public FilmListRecord setFid(Long value) {
         set(0, value);
         return this;
     }
@@ -33,8 +31,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.FID</code>.
      */
-    public UInteger getFid() {
-        return (UInteger) get(0);
+    public Long getFid() {
+        return (Long) get(0);
     }
 
     /**
@@ -100,7 +98,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.length</code>.
      */
-    public FilmListRecord setLength(UShort value) {
+    public FilmListRecord setLength(Integer value) {
         set(5, value);
         return this;
     }
@@ -108,8 +106,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.length</code>.
      */
-    public UShort getLength() {
-        return (UShort) get(5);
+    public Integer getLength() {
+        return (Integer) get(5);
     }
 
     /**
@@ -156,7 +154,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Create a detached, initialised FilmListRecord
      */
-    public FilmListRecord(UInteger fid, String title, String description, String category, BigDecimal price, UShort length, FilmListRating rating, String actors) {
+    public FilmListRecord(Long fid, String title, String description, String category, BigDecimal price, Integer length, FilmListRating rating, String actors) {
         super(JFilmList.FILM_LIST);
 
         setFid(fid);

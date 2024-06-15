@@ -22,6 +22,7 @@ import org.jooq.TableOptions;
 import org.jooq.generated.JSakila;
 import org.jooq.generated.enums.NicerButSlowerFilmListRating;
 import org.jooq.generated.tables.records.NicerButSlowerFilmListRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -53,7 +54,7 @@ public class JNicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListRec
     /**
      * The column <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public final TableField<NicerButSlowerFilmListRecord, UInteger> FID = createField(DSL.name("FID"), SQLDataType.INTEGERUNSIGNED.defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<NicerButSlowerFilmListRecord, Long> FID = createField(DSL.name("FID"), SQLDataType.INTEGERUNSIGNED.defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.nicer_but_slower_film_list.title</code>.
@@ -78,7 +79,7 @@ public class JNicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListRec
     /**
      * The column <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public final TableField<NicerButSlowerFilmListRecord, UShort> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "");
+    public final TableField<NicerButSlowerFilmListRecord, Integer> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "", new AutoConverter<UShort, Integer>(UShort.class, Integer.class));
 
     /**
      * The column <code>sakila.nicer_but_slower_film_list.rating</code>.

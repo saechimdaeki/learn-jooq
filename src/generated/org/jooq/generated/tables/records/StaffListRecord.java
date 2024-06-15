@@ -7,7 +7,6 @@ package org.jooq.generated.tables.records;
 import org.jooq.generated.tables.JStaffList;
 import org.jooq.generated.tables.pojos.StaffList;
 import org.jooq.impl.TableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -21,7 +20,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Setter for <code>sakila.staff_list.ID</code>.
      */
-    public StaffListRecord setId(UInteger value) {
+    public StaffListRecord setId(Long value) {
         set(0, value);
         return this;
     }
@@ -29,8 +28,8 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Getter for <code>sakila.staff_list.ID</code>.
      */
-    public UInteger getId() {
-        return (UInteger) get(0);
+    public Long getId() {
+        return (Long) get(0);
     }
 
     /**
@@ -126,7 +125,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Setter for <code>sakila.staff_list.SID</code>.
      */
-    public StaffListRecord setSid(UInteger value) {
+    public StaffListRecord setSid(Long value) {
         set(7, value);
         return this;
     }
@@ -134,8 +133,8 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Getter for <code>sakila.staff_list.SID</code>.
      */
-    public UInteger getSid() {
-        return (UInteger) get(7);
+    public Long getSid() {
+        return (Long) get(7);
     }
 
     // -------------------------------------------------------------------------
@@ -152,7 +151,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Create a detached, initialised StaffListRecord
      */
-    public StaffListRecord(UInteger id, String name, String address, String zipCode, String phone, String city, String country, UInteger sid) {
+    public StaffListRecord(Long id, String name, String address, String zipCode, String phone, String city, String country, Long sid) {
         super(JStaffList.STAFF_LIST);
 
         setId(id);

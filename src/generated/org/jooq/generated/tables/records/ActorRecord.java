@@ -10,7 +10,6 @@ import org.jooq.Record1;
 import org.jooq.generated.tables.JActor;
 import org.jooq.generated.tables.pojos.Actor;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -24,7 +23,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Setter for <code>sakila.actor.actor_id</code>.
      */
-    public ActorRecord setActorId(UInteger value) {
+    public ActorRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -32,8 +31,8 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Getter for <code>sakila.actor.actor_id</code>.
      */
-    public UInteger getActorId() {
-        return (UInteger) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
@@ -86,7 +85,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -104,7 +103,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Create a detached, initialised ActorRecord
      */
-    public ActorRecord(UInteger actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
+    public ActorRecord(Long actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
         super(JActor.ACTOR);
 
         setActorId(actorId);

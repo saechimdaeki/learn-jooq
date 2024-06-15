@@ -36,6 +36,7 @@ import org.jooq.generated.tables.JCustomer.CustomerPath;
 import org.jooq.generated.tables.JStaff.StaffPath;
 import org.jooq.generated.tables.JStore.StorePath;
 import org.jooq.generated.tables.records.AddressRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -66,7 +67,7 @@ public class JAddress extends TableImpl<AddressRecord> {
     /**
      * The column <code>sakila.address.address_id</code>.
      */
-    public final TableField<AddressRecord, UInteger> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<AddressRecord, Long> ADDRESS_ID = createField(DSL.name("address_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.address.address</code>.
@@ -86,7 +87,7 @@ public class JAddress extends TableImpl<AddressRecord> {
     /**
      * The column <code>sakila.address.city_id</code>.
      */
-    public final TableField<AddressRecord, UInteger> CITY_ID = createField(DSL.name("city_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<AddressRecord, Long> CITY_ID = createField(DSL.name("city_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.address.postal_code</code>.
@@ -176,8 +177,8 @@ public class JAddress extends TableImpl<AddressRecord> {
     }
 
     @Override
-    public Identity<AddressRecord, UInteger> getIdentity() {
-        return (Identity<AddressRecord, UInteger>) super.getIdentity();
+    public Identity<AddressRecord, Long> getIdentity() {
+        return (Identity<AddressRecord, Long>) super.getIdentity();
     }
 
     @Override

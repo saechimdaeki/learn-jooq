@@ -32,6 +32,11 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {
@@ -46,7 +51,6 @@ jooq {
     configurations {
         sakilaDB {
             generationTool {
-
                 jdbc {
                     driver = 'com.mysql.cj.jdbc.Driver'
                     url = 'jdbc:mysql://localhost:3306'
@@ -54,16 +58,31 @@ jooq {
                     password = "${dbPasswd}"
                 }
 
-
                 generator {
                     name = 'org.jooq.codegen.DefaultGenerator'
 
                     database {
                         name = 'org.jooq.meta.mysql.MySQLDatabase'
-
+                        unsignedTypes = true
                         schemata {
                             schema {
                                 inputSchema = 'sakila'
+                            }
+                        }
+                        forcedTypes {
+                            forcedType {
+                                userType = 'java.lang.Long'
+                                includeTypes = 'int unsigned'
+                            }
+
+                            forcedType {
+                                userType = 'java.lang.Integer'
+                                includeTypes = 'tinyint unsigned'
+                            }
+
+                            forcedType {
+                                userType = 'java.lang.Integer'
+                                includeTypes = 'smallint unsigned'
                             }
                         }
                     }
@@ -74,26 +93,20 @@ jooq {
                         fluentSetters = true
                         javaTimeTypes = true
                         deprecated = false
-
-
-                        // jpaAnnotations = true
-                        // jpaVersion = 2.2
-                        // validationAnnotations = true
-                        // springAnnotations = true
-                        // springDao = true
                     }
 
                     target {
                         directory = 'src/generated'
                     }
 
+
+                    // jooq-custom 내부의 설정
                     strategy.name = 'jooq.custom.generator.JPrefixGeneratorStrategy'
                 }
             }
         }
     }
 }
-
 sourceSets {
     main {
         java {

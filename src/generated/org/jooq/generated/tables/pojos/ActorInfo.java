@@ -6,8 +6,6 @@ package org.jooq.generated.tables.pojos;
 
 import java.io.Serializable;
 
-import org.jooq.types.UInteger;
-
 
 /**
  * VIEW
@@ -17,7 +15,7 @@ public class ActorInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private UInteger actorId;
+    private Long actorId;
     private String firstName;
     private String lastName;
     private String filmInfo;
@@ -32,7 +30,7 @@ public class ActorInfo implements Serializable {
     }
 
     public ActorInfo(
-        UInteger actorId,
+        Long actorId,
         String firstName,
         String lastName,
         String filmInfo
@@ -46,14 +44,14 @@ public class ActorInfo implements Serializable {
     /**
      * Getter for <code>sakila.actor_info.actor_id</code>.
      */
-    public UInteger getActorId() {
+    public Long getActorId() {
         return this.actorId;
     }
 
     /**
      * Setter for <code>sakila.actor_info.actor_id</code>.
      */
-    public ActorInfo setActorId(UInteger actorId) {
+    public ActorInfo setActorId(Long actorId) {
         this.actorId = actorId;
         return this;
     }

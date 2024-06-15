@@ -34,6 +34,7 @@ import org.jooq.generated.Keys;
 import org.jooq.generated.tables.JFilm.FilmPath;
 import org.jooq.generated.tables.JFilmActor.FilmActorPath;
 import org.jooq.generated.tables.records.ActorRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
@@ -64,7 +65,7 @@ public class JActor extends TableImpl<ActorRecord> {
     /**
      * The column <code>sakila.actor.actor_id</code>.
      */
-    public final TableField<ActorRecord, UInteger> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "");
+    public final TableField<ActorRecord, Long> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.actor.first_name</code>.
@@ -154,8 +155,8 @@ public class JActor extends TableImpl<ActorRecord> {
     }
 
     @Override
-    public Identity<ActorRecord, UInteger> getIdentity() {
-        return (Identity<ActorRecord, UInteger>) super.getIdentity();
+    public Identity<ActorRecord, Long> getIdentity() {
+        return (Identity<ActorRecord, Long>) super.getIdentity();
     }
 
     @Override
