@@ -2,7 +2,6 @@ package me.saechimdaeki.jooq.film;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.util.List;
 
 import org.jooq.generated.tables.pojos.Film;
 import org.junit.jupiter.api.DisplayName;
