@@ -12,7 +12,7 @@ public class JooqStringConditionUtils {
             return DSL.noCondition();
         }
 
-        return field.like("%" + value + "%");
+        return field.like('%' + value + '%');
     }
 
     public static Condition eqIfNotBlank(Field<String> field, String value) {
