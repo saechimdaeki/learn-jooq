@@ -5,20 +5,17 @@ import org.jooq.Field;
 import org.jooq.impl.DSL;
 import org.jooq.tools.StringUtils;
 
-public class JooqStringConditionUtils {
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class JooqStringConditionUtils {
 
     public static Condition containsIfNotBlank(Field<String> field, String value) {
-        if (StringUtils.isBlank(value)) {
-            return DSL.noCondition();
-        }
-
-        return field.like('%' + value + '%');
+        return StringUtils.isBlank(value) ? DSL.noCondition() : field.like('%' + value + '%');
     }
 
     public static Condition eqIfNotBlank(Field<String> field, String value) {
-        if (StringUtils.isBlank(value)) {
-            return DSL.noCondition();
-        }
-        return field.eq(value);
+        return StringUtils.isBlank(value) ? DSL.noCondition() : field.eq(value);
     }
 }

@@ -34,8 +34,8 @@ public class FilmRepository {
     }
 
     public List<FilmWithActor> findFilmWithActorList(Long page, Long pageSize) {
-        JFilmActor FILM_ACTOR = JFilmActor.FILM_ACTOR;
-        JActor ACTOR = JActor.ACTOR;
+        final JFilmActor FILM_ACTOR = JFilmActor.FILM_ACTOR;
+        final JActor ACTOR = JActor.ACTOR;
 
         return dslContext.select(
                                  DSL.row(FILM.fields()),

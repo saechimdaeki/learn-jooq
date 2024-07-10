@@ -1,6 +1,14 @@
 package me.saechimdaeki.jooq.film;
 
-import static org.jooq.impl.DSL.*;
+import static org.jooq.impl.DSL.avg;
+import static org.jooq.impl.DSL.case_;
+import static org.jooq.impl.DSL.field;
+import static org.jooq.impl.DSL.localDateTimeDiff;
+import static org.jooq.impl.DSL.name;
+import static org.jooq.impl.DSL.row;
+import static org.jooq.impl.DSL.select;
+import static org.jooq.impl.DSL.selectCount;
+import static org.jooq.impl.DSL.selectOne;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -15,7 +23,6 @@ import org.jooq.generated.tables.JInventory;
 import org.jooq.generated.tables.JRental;
 import org.jooq.generated.tables.daos.FilmDao;
 import org.jooq.generated.tables.pojos.Film;
-import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
 
 import me.saechimdaeki.jooq.config.converter.PriceCategoryConverter;

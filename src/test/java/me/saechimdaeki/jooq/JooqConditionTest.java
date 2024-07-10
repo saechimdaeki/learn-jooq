@@ -96,6 +96,6 @@ class JooqConditionTest {
 
         // then
         Assertions.assertThat(actorFilmographies).hasSize(1);
-        Assertions.assertThat(actorFilmographies.get(0).getFilmList()).hasSize(1);
+        Assertions.assertThat(actorFilmographies.get(0).filmList()).hasSize(1);
     }
 }
