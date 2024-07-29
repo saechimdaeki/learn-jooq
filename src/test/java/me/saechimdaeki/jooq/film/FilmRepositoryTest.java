@@ -36,7 +36,7 @@ class FilmRepositoryTest {
     @Test
     @DisplayName("2) 영화 정보 간략 조회")
     void findSimpleFilmInfoById() {
-        SimpleFilmInfo simpleFilmInfo = filmRepository.findSimpleFilmInfoById(1L);
+        final SimpleFilmInfo simpleFilmInfo = filmRepository.findSimpleFilmInfoById(1L);
         assertThat(simpleFilmInfo).hasNoNullFieldsOrProperties();
     }
 
@@ -44,7 +44,7 @@ class FilmRepositoryTest {
     @DisplayName("3) 영화와 영화에 출연한 배우 정보를 페이징하여 조회")
     void findFilmAndActorInfo() {
         // given when
-        FilmWIthActorPageResponse filmActorPageResponse = filmService.getFilmActorPageResponse(1L, 20L);
+        final FilmWIthActorPageResponse filmActorPageResponse = filmService.getFilmActorPageResponse(1L, 20L);
 
         //then
         assertThat(filmActorPageResponse).isNotNull();

@@ -29,7 +29,7 @@ public class JooqSubqueryTest {
     void 스칼라_서브쿼리_예제() {
 
         final String filmTitle = "EGG";
-        final List<FilmPriceSummary> priceSummaryList = filmRepository.findFilmPirceSummaryByFilmTitle(filmTitle);
+        final List<FilmPriceSummary> priceSummaryList = filmRepository.findFilmPriceSummaryByFilmTitle(filmTitle);
 
         Assertions.assertThat(priceSummaryList).isNotEmpty();
     }

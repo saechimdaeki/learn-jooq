@@ -2,6 +2,8 @@ package me.saechimdaeki.jooq.actor;
 
 import static me.saechimdaeki.util.jooq.JooqListConditionUtils.inIfNotEmpty;
 import static me.saechimdaeki.util.jooq.JooqStringConditionUtils.containsIfNotBlank;
+import static org.jooq.impl.DSL.noField;
+import static org.jooq.impl.DSL.val;
 
 import org.jooq.Configuration;
 import org.jooq.DSLContext;
@@ -15,6 +17,7 @@ import org.jooq.generated.tables.pojos.Film;
 import org.jooq.generated.tables.records.ActorRecord;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -127,5 +130,55 @@ public class ActorRepository {
                 ACTOR.FIRST_NAME,
                 ACTOR.LAST_NAME
         ).valuesOfRows(rows).execute();
+    }
+
+    public void update(Actor actor) {
+        actorDao.update(actor);
+    }
+
+    public Actor findByActorId(Long actorId) {
+        return actorDao.findById(actorId);
+    }
+
+    public int updateWithDto(Long newActorId, ActorUpdateRequest request) {
+
+        var firstName = StringUtils.hasText(request.getFirstName()) ? val(request.getFirstName()) : noField(ACTOR.FIRST_NAME);
+        var lastName = StringUtils.hasText(request.getLastName()) ? val(request.getLastName()) : noField(ACTOR.LAST_NAME);
+
+
+        return dslContext.update(ACTOR)
+                .set(ACTOR.FIRST_NAME, firstName)
+                .set(ACTOR.LAST_NAME, lastName)
+                .where(ACTOR.ACTOR_ID.eq(newActorId))
+                .execute();
+    }
+
+    public int updateWithRecord(Long newActorId, ActorUpdateRequest request) {
+        var record = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(newActorId));
+
+        if (StringUtils.hasText(request.getFirstName())) {
+            record.setFirstName(request.getFirstName()).getFirstName();
+        }
+
+        if (StringUtils.hasText(request.getLastName())) {
+            record.setLastName(request.getLastName());
+        }
+
+        return dslContext.update(ACTOR)
+                .set(record)
+                .where(ACTOR.ACTOR_ID.eq(newActorId))
+                .execute();
+    }
+
+    public int delete(Long newActorId) {
+        return dslContext.deleteFrom(ACTOR)
+                .where(ACTOR.ACTOR_ID.eq(newActorId))
+                .execute();
+    }
+
+    public int deleteWithActiveRecord(Long actorId) {
+        ActorRecord actorRecord = dslContext.newRecord(ACTOR);
+        actorRecord.setActorId(actorId);
+        return actorRecord.delete();
     }
 }

@@ -71,7 +71,7 @@ public class FilmRepositoryHasA {
                          .fetchInto(FilmWithActor.class);
     }
 
-    public List<FilmPriceSummary> findFilmPirceSummaryByFilmTitle(String filmTitle) {
+    public List<FilmPriceSummary> findFilmPriceSummaryByFilmTitle(String filmTitle) {
         final JInventory INVENTORY = JInventory.INVENTORY;
         return dslContext.select(
                                  FILM.FILM_ID,
