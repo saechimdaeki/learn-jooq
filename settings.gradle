@@ -1,3 +1,4 @@
 rootProject.name = 'jooq'
 include 'jOOQ-custom'
+include 'entity'
 

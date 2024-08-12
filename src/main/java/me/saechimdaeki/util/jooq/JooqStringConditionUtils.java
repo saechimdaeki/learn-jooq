@@ -19,3 +19,4 @@ public final class JooqStringConditionUtils {
         return StringUtils.isBlank(value) ? DSL.noCondition() : field.eq(value);
     }
 }
+
